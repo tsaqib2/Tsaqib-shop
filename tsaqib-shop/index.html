@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsaqib Shop - Top Up Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Tsaqib Shop</h1>
+        <p>Top Up Game Murah, Cepat, & Aman</p>
+    </header>
+
+    <section id="gameSelection">
+        <h2>Pilih Game</h2>
+        <div class="game-list">
+            <div class="game-card" onclick="selectGame('Mobile Legends')">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Mobile_Legends_Logo.png/600px-Mobile_Legends_Logo.png" alt="Mobile Legends">
+                <p>Mobile Legends</p>
+            </div>
+            <div class="game-card" onclick="selectGame('Free Fire')">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0e/Free_Fire_logo.png/640px-Free_Fire_logo.png" alt="Free Fire">
+                <p>Free Fire</p>
+            </div>
+            <div class="game-card" onclick="selectGame('PUBG Mobile')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/PUBG_Mobile_logo.png/640px-PUBG_Mobile_logo.png" alt="PUBG Mobile">
+                <p>PUBG Mobile</p>
+            </div>
+            <div class="game-card" onclick="selectGame('Genshin Impact')">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/73/Genshin_Impact_logo.svg/640px-Genshin_Impact_logo.svg.png" alt="Genshin Impact">
+                <p>Genshin Impact</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="topupSection" style="display:none;">
+        <h2>Top Up <span id="selectedGame"></span></h2>
+        <label for="userId">Masukkan ID Pengguna:</label>
+        <input type="text" id="userId" placeholder="Contoh: 123456789">
+
+        <label for="diamondAmount">Pilih Jumlah Diamond:</label>
+        <select id="diamondAmount" onchange="updatePrice()">
+            <option value="">-- Pilih --</option>
+            <option value="100">100 Diamond</option>
+            <option value="200">200 Diamond</option>
+            <option value="500">500 Diamond</option>
+            <option value="1000">1.000 Diamond</option>
+            <option value="2000">2.000 Diamond</option>
+            <option value="5000">5.000 Diamond</option>
+            <option value="10000">10.000 Diamond</option>
+        </select>
+
+        <p>Total Harga: <span id="priceDisplay">Rp 0</span></p>
+        <button onclick="payNow()">Bayar Sekarang</button>
+    </section>
+
+    <footer>
+        <p>© 2025 Tsaqib Shop. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
