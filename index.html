@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsaqib Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Tsaqib Shop</h1>
+        <p>Top Up Game Termurah & Tercepat</p>
+    </header>
+
+    <main>
+        <section class="game-selection">
+            <h2>Pilih Game</h2>
+            <div class="game-list">
+                <div class="game-card" data-game="mobile-legends">
+                    <img src="https://seeklogo.com/images/M/mobile-legends-logo-0B1B5D12B9-seeklogo.com.png" alt="Mobile Legends">
+                    <p>Mobile Legends</p>
+                </div>
+                <div class="game-card" data-game="free-fire">
+                    <img src="https://seeklogo.com/images/F/free-fire-logo-80427E8742-seeklogo.com.png" alt="Free Fire">
+                    <p>Free Fire</p>
+                </div>
+                <div class="game-card" data-game="pubg">
+                    <img src="https://seeklogo.com/images/P/pubg-mobile-logo-8A479F9C1E-seeklogo.com.png" alt="PUBG Mobile">
+                    <p>PUBG Mobile</p>
+                </div>
+                <div class="game-card" data-game="valorant">
+                    <img src="https://seeklogo.com/images/V/valorant-logo-FAB2CA0E55-seeklogo.com.png" alt="Valorant">
+                    <p>Valorant</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topup-section">
+            <h2>Top Up</h2>
+            <form id="topupForm">
+                <label for="userId">User ID:</label>
+                <input type="text" id="userId" required>
+
+                <label for="nominal">Pilih Nominal:</label>
+                <select id="nominal" required></select>
+
+                <p id="price">Harga: -</p>
+
+                <button type="submit">Beli Sekarang</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
