@@ -1,3 +1,19 @@
+<select id="game">
+  <option value="">-- Pilih Game --</option>
+  <option value="Mobile Legends">Mobile Legends</option>
+  <option value="Free Fire">Free Fire</option>
+  <option value="Valorant">Valorant</option>
+</select>
+
+<img id="gameLogo" src="" alt="Logo Game" style="max-width:150px;margin-top:10px;">
+
+<select id="diamond">
+  <option value="">-- Pilih Diamond --</option>
+</select>
+
+<p id="price"></p>
+
+<script>
 const gameData = {
   "Mobile Legends": {
     logo: "https://upload.wikimedia.org/wikipedia/en/6/68/Mobile_Legends_Bang_Bang_logo.png",
@@ -33,3 +49,39 @@ const gameData = {
     ]
   }
 };
+
+const gameSelect = document.getElementById('game');
+const diamondSelect = document.getElementById('diamond');
+const priceText = document.getElementById('price');
+const gameLogo = document.getElementById('gameLogo');
+
+gameSelect.addEventListener('change', function() {
+  const selectedGame = gameSelect.value;
+  diamondSelect.innerHTML = '<option value="">-- Pilih Diamond --</option>';
+  priceText.textContent = '';
+  
+  if (selectedGame && gameData[selectedGame]) {
+    // ganti logo
+    gameLogo.src = gameData[selectedGame].logo;
+
+    // isi diamond
+    gameData[selectedGame].diamonds.forEach(pack => {
+      const option = document.createElement('option');
+      option.value = pack.price;
+      option.textContent = `${pack.amount} Diamond - Rp${pack.price.toLocaleString()}`;
+      diamondSelect.appendChild(option);
+    });
+  } else {
+    gameLogo.src = '';
+  }
+});
+
+diamondSelect.addEventListener('change', function() {
+  const price = diamondSelect.value;
+  if (price) {
+    priceText.textContent = `Harga: Rp${parseInt(price).toLocaleString()}`;
+  } else {
+    priceText.textContent = '';
+  }
+});
+</script>
